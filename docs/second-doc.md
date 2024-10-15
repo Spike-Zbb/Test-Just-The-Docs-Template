@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: default
 title: Second Document
 nav_order: 3
 ---
