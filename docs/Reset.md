@@ -56,5 +56,5 @@ Depending on the mode (soft, mixed, or hard), git reset can be used to revise yo
 ### Safer alternative
 If you're unsure about using git reset --hard, you might want to consider git revert or git checkout, which offer safer ways to undo changes without losing any data permanently.
 
-git reset offers a wide range of ways to undo work, from unstaging changes to rolling back entire commits. However, it's important to use it carefully, particularly with the --hard option. If you're only undoing staged changes, git reset with no additional options (or using --mixed) is the safest approach.
+In summary,git reset offers a wide range of ways to undo work, from unstaging changes to rolling back entire commits. However, it's important to use it carefully, particularly with the --hard option. If you're only undoing staged changes, git reset with no additional options (or using --mixed) is the safest approach.
 ---
