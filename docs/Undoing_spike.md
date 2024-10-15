@@ -2,7 +2,6 @@
 layout: default
 title: Undoing in Git
 nav_order: 2
-has_children: true
 ---
 
 # Strategies for Undoing in Git
