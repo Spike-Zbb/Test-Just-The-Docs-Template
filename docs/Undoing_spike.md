@@ -2,6 +2,7 @@
 layout: default
 title: Undoing in Git
 nav_order: 2
+has_children: true
 ---
 
 # Undoing in Git
@@ -15,7 +16,7 @@ git checkout: Switches between branches or restores files to a specific state, a
 git reset: Moves the current branch to a previous commit, effectively undoing commits. It has different modes (--soft, --mixed, and --hard) depending on whether you want to keep or discard changes in the staging area and working directory.
 
 ## Revert
-git revert: Creates a new commit that undoes the effects of a previous commit without altering the commit history. This is useful for collaborative work as it preserves the commit timeline.
+git revert: Creates a nefw commit that undoes the effects of a previous commit without altering the commit history. This is useful for collaborative work as it preserves the commit timeline.
 
 ## Clean
 git clean: Permanently removes untracked files from the working directory, helpful when you want to clean up unnecessary files.
