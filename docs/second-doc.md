@@ -1,11 +1,9 @@
 ---
 layout: default
-title: First Document
-nav_order: 2
+title: Second Document
+nav_order: 3
 ---
 
-# This Is The First Document
+# This Is The Second Document
 
-This is the first document within the docs folder. 
-
-All is *good* and **right** with the world.
+This is only test
