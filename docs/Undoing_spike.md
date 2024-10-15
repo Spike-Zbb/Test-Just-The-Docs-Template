@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Undoing in Git
-nav_order: 2
+title: Undoing
+nav_order: 1
 ---
 
 # Strategies for Undoing in Git
@@ -16,15 +16,18 @@ Git provides several powerful commands for undoing changes, each designed for sp
 
 `git checkout` is ideal when you want to undo changes made to a **specific file** in your working directory that hasn't been staged yet. It allows you to discard changes in a file and revert it to the last committed state.
 
-**Use Case**:  
-You’ve modified a file but haven’t staged it yet with `git add`. Now, you realize you don’t want those changes and wish to discard them:
+- **Use Case**:  
+  You’ve modified a file but haven’t staged it yet with `git add`. Now, you realize you don’t want those changes and wish to discard them:
+
 ```bash
 git checkout -- <file>
 ```
-**Key Advantage**:  
+### Key Advantage
+
 Only the specified file is affected, and no commits or other changes are impacted.
 
-**When to Use**:  
+### When to Use
+
 Use `git checkout` if you only want to discard changes in your working directory without affecting the staging area or commit history.
 
 ## 2. When to Use `git reset`
@@ -33,43 +36,44 @@ Use `git checkout` if you only want to discard changes in your working directory
 
 `git reset` is a versatile command that can be used to **unstage files**, **rewrite commits**, or **remove changes** entirely. Depending on the options you choose (--soft, --mixed, --hard), it can have different effects.
 
-#### git reset --soft
+#### **git reset --soft**
 
-**Use Case**:  
-You want to undo a commit but keep the changes staged for revision. This allows you to "un-commit" changes but not lose any progress.
+- **Use Case**
+  You want to undo a commit but keep the changes staged for revision. This allows you to "un-commit" changes but not lose any progress.
 
-**When to Use**:  
+-  **When to Use**
 If you've made a mistake in your last commit and want to amend or revise it, but still want to keep your changes staged.
 
-**Example**:  
+-  **Example**
 ```bash
 git reset --soft HEAD~1
 ```
 
-#### git reset --mixed (default)
-**Use Case**:  
-You want to undo a commit and unstage the changes, but keep the changes in your working directory for further editing.
+#### **git reset --mixed (default)**
+- **Use Case**
+  You want to undo a commit and unstage the changes, but keep the changes in your working directory for further editing.
 
-**When to Use**:  
-When you’ve committed something prematurely and want to make additional changes before committing again.
+- **When to Use**
+  When you’ve committed something prematurely and want to make additional changes before committing again.
 
-**Example**:  
+- **Example**
 ```bash
 git reset HEAD~1
 ```
-#### git reset --hard
-**Use Case**:  
-You want to completely discard all changes, both staged and unstaged, and move your branch pointer back to a specific commit.
+#### **git reset --hard**
+- **Use Case**
+  You want to completely discard all changes, both staged and unstaged, and move your branch pointer back to a specific commit.
 
-**When to Use**:  
-Only use `--hard` when you are certain that you don’t need any of the changes after a specific commit. This is a **destructive** option that removes all changes from the working directory and staging area.
+- **When to Use**
+  Only use `--hard` when you are certain that you don’t need any of the changes after a specific commit. This is a **destructive** option that removes all changes from the working directory and staging area.
 
-**Example**:  
+- **Example**
 ```bash
 git reset --hard HEAD~1
 ```
 
-**Key Advantage**:  
+### Key Advantage
+
 `git reset` gives you fine control over staging and commit history. It's perfect for local branches where rewriting history is acceptable.
 
 ## 3. When to Use `git revert`
@@ -78,15 +82,17 @@ git reset --hard HEAD~1
 
 `git revert` is the preferred method when you need to undo changes in a public or shared branch. It creates a new commit that reverses the changes introduced by a previous commit, leaving the original commit history intact.
 
-**Use Case**:  
-You’ve made a mistake in a previous commit that’s already been pushed to a shared branch (like `main`), and you need to undo the changes without rewriting history:
+- **Use Case** 
+  You’ve made a mistake in a previous commit that’s already been pushed to a shared branch (like `main`), and you need to undo the changes without rewriting history:
 ```bash
 git revert <commit>
 ```
-**Key Advantage**:  
+### Key Advantage 
+
 `git revert` is non-destructive and safe to use in shared repositories because it doesn’t rewrite commit history; it simply adds a new commit that negates a previous one.
 
-**When to Use**:  
+### Key Advantage 
+
 Use `git revert` when you need to safely undo a commit in a public branch or when you want to ensure that your repository's history remains intact.
 
 ## 4. When to Use `git clean`
@@ -95,15 +101,18 @@ Use `git revert` when you need to safely undo a commit in a public branch or whe
 
 `git clean` is the command to use when you want to **remove untracked files** from your working directory. These files might be temporary, generated by build processes, or files that you created but decided not to keep.
 
-**Use Case**:  
-Your working directory has become cluttered with untracked files, and you want to clean up your workspace:
+- **Use Case**
+ Your working directory has become cluttered with untracked files, and you want to clean up your workspace:
+
 ```bash
 git clean -f
 ```
-**Key Advantage**:  
+### Key Advantage
+
 It removes files that Git isn’t tracking, leaving the tracked files and changes untouched.
 
-**When to Use**:  
+### When to Use
+  
 Use `git clean` when you need to clean up untracked files, such as build artifacts, from your working directory. Be cautious, as this action is irreversible through Git.
 
 ## Choosing the Right Strategy
