@@ -39,6 +39,6 @@ This command is safe to use if you only want to undo changes in specific files. 
 As of newer versions of Git, the functionality of git checkout related to undoing changes has been split into the git restore command. While git checkout still works for undoing file changes, it's recommended to use git restore for this specific purpose:
 
 git restore <file>
-
+git 
 However, git checkout remains a powerful tool for undoing changes in specific files when you're not using the newer git restore.
 ---
