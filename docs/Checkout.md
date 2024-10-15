@@ -6,7 +6,6 @@ nav_order: 1
 ---
 
 # Undoing with git checkout
-
 The git checkout command is a versatile tool in Git, often used for switching between branches or restoring files to a previous state. When it comes to undoing changes, git checkout can help you discard modifications in the working directory that haven't been staged yet.
 
 ## Key Use
@@ -27,10 +26,8 @@ git checkout -- example.txt
 Now, example.txt will look exactly as it did in the last commit, and any modifications will be undone.
 
 ## Important Notes
-
 ### Not for staged changes:
 git checkout only undoes changes in files that have not been staged (git add). If changes have already been staged, you will need to use git reset or git restore to unstage them.
-
 
 ### Branch safety
 This command is safe to use if you only want to undo changes in specific files. It will not affect the state of your branches or commit history.
@@ -39,6 +36,6 @@ This command is safe to use if you only want to undo changes in specific files. 
 As of newer versions of Git, the functionality of git checkout related to undoing changes has been split into the git restore command. While git checkout still works for undoing file changes, it's recommended to use git restore for this specific purpose:
 
 git restore <file>
-git 
+
 However, git checkout remains a powerful tool for undoing changes in specific files when you're not using the newer git restore.
 ---
