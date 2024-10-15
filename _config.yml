@@ -1,8 +1,6 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
+title: SpikeTest
+description: This is only a test
+theme: Test
 
-url: https://StungEye-RRC.github.io/Just-The-Docs-Template
+url: https://SpikeTest.github.io/Test-Just-The-Docs-Template
 
-aux_links:
-  Template Repository: https://github.com/StungEye-RRC/Just-The-Docs-Template
